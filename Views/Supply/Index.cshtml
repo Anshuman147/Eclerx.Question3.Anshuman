@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Eclerx.Question3.Anshuman.Models.Supplier>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    <h4>Supplier</h4>
+    <hr />
+    <table>
+        <tr>
+            <th>Company Name </th>
+            <th>Contact Name </th>
+            <th>Address </th>
+            <th>City</th>
+            <th>Mobile No</th>
+            <th>Email Id</th>
+            <th>Created Date</th>
+        </tr>
+        @foreach (var md in Model)
+        {
+    <tr>
+        <td>@md.ComapanyName </td>
+        <td>@md.ContactName</td>
+        <td>@md.Address </td>
+        <td>@md.City</td>
+        <td>@md.MobileNo</td>
+        <td>@md.EmailId</td>
+        <td>@md.CreatedDate</td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = md.SupplierId })
+        | @Html.ActionLink("Back to Home", "Index")
+    </td>
+
+    </tr>
+            
+        }
+    </table>
+   
+</div>
+
